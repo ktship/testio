@@ -5,7 +5,6 @@ import (
 	. "gopkg.in/check.v1"
 	"log"
 	"time"
-	"strconv"
 )
 
 func Test(t *testing.T) { TestingT(t) }
@@ -57,7 +56,7 @@ func (s *TableSuite) Test000_BASIC_HASH_IO(c *C) {
 	if (errRead != nil) {
 		c.Fatal(err)
 	}
-	if (resp["createTime"] != strconv.Itoa(int(tt))) {
+	if (resp["createTime"] != int(tt)) {
 		c.Fatalf(" createTime(%d) is not %d... type: %T", resp["createTime"], tt, resp["createTime"])
 	}
 	if (resp["greeting"] != "hello") {
@@ -66,7 +65,7 @@ func (s *TableSuite) Test000_BASIC_HASH_IO(c *C) {
 	if (resp["ac"] != "test") {
 		c.Fatal("error")
 	}
-	if (resp["b"] != strconv.Itoa(1234)) {
+	if (resp["b"] != 1234) {
 		c.Fatal("error")
 	}
 
@@ -86,10 +85,10 @@ func (s *TableSuite) Test000_BASIC_HASH_IO(c *C) {
 	if (resp["ac"] != "product") {
 		c.Fatalf(" (%v) ... type: %T", resp["ac"], resp["ac"])
 	}
-	if (resp["b"] != strconv.Itoa(1234)) {
+	if (resp["b"] != 1234) {
 		c.Fatalf(" (%v) is not tt... type: %T", resp["b"], resp["b"])
 	}
-	if (resp["c"] != strconv.Itoa(1111)) {
+	if (resp["c"] != 1111) {
 		c.Fatalf(" (%v) is not tt... type: %T", resp["c"], resp["c"])
 	}
 }
@@ -123,7 +122,7 @@ func (s *TableSuite) Test001_BASIC_RANGE_IO(c *C) {
 	if (errRead != nil) {
 		c.Fatal(err)
 	}
-	if (resp["createTime"] != strconv.Itoa(int(tt))) {
+	if (resp["createTime"] != int(tt)) {
 		c.Fatalf(" createTime(%d) is not %d... type: %T", resp["createTime"], tt, resp["createTime"])
 	}
 	if (resp["greeting"] != "hello") {
@@ -132,7 +131,7 @@ func (s *TableSuite) Test001_BASIC_RANGE_IO(c *C) {
 	if (resp["ac"] != "test") {
 		c.Fatal("error")
 	}
-	if (resp["b"] != strconv.Itoa(1234)) {
+	if (resp["b"] != 1234) {
 		c.Fatal("error")
 	}
 
@@ -153,10 +152,10 @@ func (s *TableSuite) Test001_BASIC_RANGE_IO(c *C) {
 	if (resp["ac"] != "product") {
 		c.Fatalf(" (%v) ... type: %T", resp["ac"], resp["ac"])
 	}
-	if (resp["b"] != strconv.Itoa(1234)) {
+	if (resp["b"] != 1234) {
 		c.Fatalf(" (%v) is not tt... type: %T", resp["b"], resp["b"])
 	}
-	if (resp["c"] != strconv.Itoa(1111)) {
+	if (resp["c"] != 1111) {
 		c.Fatalf(" (%v) is not tt... type: %T", resp["c"], resp["c"])
 	}
 }

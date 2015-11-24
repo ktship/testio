@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"strconv"
 )
 
 type JsonFileIO struct {
@@ -39,7 +38,7 @@ func (io *JsonFileIO)Read(hkey string, hid string, hkey2 string, hid2 string) (m
 	for k, v := range dat {
 		switch v.(type) {
 		case float64:
-			dat[k] = strconv.Itoa(int(v.(float64)))
+			dat[k] = int(v.(float64))
 		case string:
 		default:
 			return nil, fmt.Errorf("NOT SUPPORT TYPE")
